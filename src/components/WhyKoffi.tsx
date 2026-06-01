@@ -3,6 +3,7 @@ import handsClac  from '../assets/hands-clac.svg.svg';
 import handsHello from '../assets/hands-hello.svg.svg';
 import FeatureCard from './FeatureCard';
 import SectionHeader from './SectionHeader';
+import { useInView } from '../hooks/useInView';
 
 /* ─── Cards data ────────────────────────────────────────────────────────── */
 const cards = [
@@ -40,9 +41,11 @@ const cards = [
 
 /* ─── WhyKoffi Section ──────────────────────────────────────────────────── */
 export default function WhyKoffi() {
+  const { ref: titleRef, inView: titleInView } = useInView(0.1);
 
   return (
     <section
+      ref={titleRef}
       id="why-koffi"
       aria-labelledby="why-koffi-heading"
       className="w-full rounded-xl flex flex-col items-center relative overflow-visible"
@@ -70,7 +73,7 @@ export default function WhyKoffi() {
         title={
           <>
             Coffee that gives you<br />
-            <span className="inline-block px-4 pb-1 mt-1 anim-slide-in-left" style={{ background: '#FFA9E9' }}>
+            <span className={`inline-block px-4 pb-1 mt-1 ${titleInView ? 'anim-slide-in-left' : 'hidden-before-anim'}`} style={{ background: '#FFA9E9' }}>
               space to breathe
             </span>
           </>
