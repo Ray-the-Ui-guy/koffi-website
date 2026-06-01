@@ -41,11 +41,10 @@ const cards = [
 
 /* ─── WhyKoffi Section ──────────────────────────────────────────────────── */
 export default function WhyKoffi() {
-  const { ref: titleRef, inView: titleInView } = useInView(0.1);
+  const { ref: titleRef, inView: titleInView } = useInView(0.05);
 
   return (
     <section
-      ref={titleRef}
       id="why-koffi"
       aria-labelledby="why-koffi-heading"
       className="w-full rounded-xl flex flex-col items-center relative overflow-visible"
@@ -73,7 +72,11 @@ export default function WhyKoffi() {
         title={
           <>
             Coffee that gives you<br />
-            <span className={`inline-block px-4 pb-1 mt-1 ${titleInView ? 'anim-slide-in-left' : 'hidden-before-anim'}`} style={{ background: '#FFA9E9' }}>
+            <span 
+              ref={titleRef}
+              className={`inline-block px-4 pb-1 mt-1 ${titleInView ? 'anim-slide-in-left' : 'hidden-before-anim'}`} 
+              style={{ background: '#FFA9E9' }}
+            >
               space to breathe
             </span>
           </>
