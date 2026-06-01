@@ -41,7 +41,7 @@ const cards = [
 
 /* ─── WhyKoffi Section ──────────────────────────────────────────────────── */
 export default function WhyKoffi() {
-  const { ref: titleRef, inView: titleInView } = useInView(0.05);
+  const { ref: containerRef, inView: containerInView } = useInView(0.05);
 
   return (
     <section
@@ -67,23 +67,28 @@ export default function WhyKoffi() {
       />
 
       {/* ── Header Container ── */}
-      <SectionHeader
-        badgeText="Why Koffi Exists"
-        title={
-          <>
-            Coffee that gives you<br />
-            <span 
-              ref={titleRef}
-              className={`inline-block px-4 pb-1 mt-1 ${titleInView ? 'anim-slide-in-left' : 'hidden-before-anim'}`} 
-              style={{ background: '#FFA9E9' }}
-            >
-              space to breathe
-            </span>
-          </>
-        }
-        description="Because great flavour deserves room, and so do you."
-        light={false}
-      />
+      <div
+        ref={containerRef}
+        className="flex flex-col relative w-full items-center text-center mx-auto"
+        style={{ maxWidth: '529px' }}
+      >
+        <SectionHeader
+          badgeText="Why Koffi Exists"
+          title={
+            <>
+              Coffee that gives you<br />
+              <span 
+                className={`inline-block px-4 pb-1 mt-1 ${containerInView ? 'anim-slide-in-left' : 'hidden-before-anim'}`} 
+                style={{ background: '#FFA9E9' }}
+              >
+                space to breathe
+              </span>
+            </>
+          }
+          description="Because great flavour deserves room, and so do you."
+          light={false}
+        />
+      </div>
       {/* ── Cards — Native CSS Sticky Stack ── */}
       <div className="w-full max-w-[1185px] mx-auto relative mt-10 mb-[80vh]">
         {cards.map((card, i) => (
