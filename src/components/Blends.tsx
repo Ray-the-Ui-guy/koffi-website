@@ -1,4 +1,3 @@
-import coffeeIcon from '../assets/coffee-01.svg';
 import koffiBlendsImg from '../assets/koffi-blends.png';
 import { useInView } from '../hooks/useInView';
 import SectionHeader from './SectionHeader';
@@ -49,12 +48,17 @@ function BlendCard({ name, roast, description, price, bgFrom, bgTo, index }: Ble
 
       {/* Content */}
       <div className="flex flex-col flex-1" style={{ padding: 'clamp(24px, 4vw, 40px)' }}>
-        <h3
-          className="m-0 text-koffi-brown"
-          style={{ fontFamily: "'Nimbu Demo', serif", fontWeight: 500, fontSize: 'clamp(20px, 2.2vw, 24px)', marginBottom: '12px' }}
-        >
-          {name}
-        </h3>
+        <div className="mb-3">
+          <h3
+            className="m-0 text-koffi-brown"
+            style={{ fontFamily: "'Nimbu Demo', serif", fontWeight: 500, fontSize: 'clamp(20px, 2.2vw, 24px)' }}
+          >
+            {name}
+          </h3>
+          <p className="m-0 uppercase tracking-[0.18em] text-xs text-koffi-brown/70" style={{ marginTop: '8px' }}>
+            {roast}
+          </p>
+        </div>
         <p
           className="m-0 font-body flex-1"
           style={{ fontSize: '15.5px', lineHeight: '24px', color: 'rgba(70,30,16,0.7)', marginBottom: '24px' }}

@@ -1,10 +1,8 @@
-import coffeeIcon from '../assets/coffee-01.svg';
 import handsHeart from '../assets/hands-heart.svg.svg';
 import handsClac  from '../assets/hands-clac.svg.svg';
 import handsHello from '../assets/hands-hello.svg.svg';
 import FeatureCard from './FeatureCard';
 import SectionHeader from './SectionHeader';
-import { useInView } from '../hooks/useInView';
 
 /* ─── Cards data ────────────────────────────────────────────────────────── */
 const cards = [
@@ -42,7 +40,6 @@ const cards = [
 
 /* ─── WhyKoffi Section ──────────────────────────────────────────────────── */
 export default function WhyKoffi() {
-  const { ref: hRef, inView: hIn } = useInView(0.1);
 
   return (
     <section
