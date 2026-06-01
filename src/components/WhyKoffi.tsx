@@ -70,7 +70,7 @@ export default function WhyKoffi() {
         title={
           <>
             Coffee that gives you<br />
-            <span className="inline-block px-4 pb-1 mt-1" style={{ background: '#FFA9E9' }}>
+            <span className="inline-block px-4 pb-1 mt-1 anim-slide-in-left" style={{ background: '#FFA9E9' }}>
               space to breathe
             </span>
           </>
