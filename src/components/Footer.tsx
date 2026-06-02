@@ -34,7 +34,7 @@ export default function Footer() {
           <span
             className="text-white uppercase leading-none tracking-wider select-none"
             style={{
-              fontFamily: "'Nimbu Demo', serif",
+              fontFamily: "'Joti One', cursive",
               fontWeight: 600,
               fontSize: 'clamp(64px, 14vw, 180px)',
               letterSpacing: '4px',

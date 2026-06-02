@@ -38,7 +38,7 @@ export default function Loader({ onComplete }: LoaderProps) {
       {loaderVisible && (
         <div className="loader-container">
           <div className="loader-logo-frame">
-            <span className="loader-logo-text">koffi</span>
+            <span className="loader-logo-text">KOFFI</span>
           </div>
           <div className="loader-progress-track">
             <div className="loader-progress-bar" />
@@ -52,8 +52,9 @@ export default function Loader({ onComplete }: LoaderProps) {
           shutterState === 'covering' || shutterState === 'flipping' ? 'active' : ''
         } ${shutterState === 'flipping' ? 'flip-up' : ''}`}
       >
-        <span className="shutter-logo-text">koffi</span>
+        <span className="shutter-logo-text">KOFFI</span>
       </div>
+
 
     </>
   );
