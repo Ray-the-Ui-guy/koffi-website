@@ -232,6 +232,11 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: background-color 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.loader-container.shutter-green {
+  background-color: var(--color-koffi-green);
 }
 
 .loader-logo-frame {
@@ -248,6 +253,11 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.1;
   display: inline-block;
   animation: loaderTextRise 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: color 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.loader-container.shutter-green .loader-logo-text {
+  color: #FFFFFF;
 }
 
 .loader-progress-track {
@@ -257,6 +267,11 @@ a { text-decoration: none; color: inherit; }
   border-radius: 4px;
   overflow: hidden;
   margin-top: 24px;
+  transition: opacity 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.loader-container.shutter-green .loader-progress-track {
+  opacity: 0;
 }
 
 .loader-progress-bar {
@@ -267,44 +282,10 @@ a { text-decoration: none; color: inherit; }
   animation: progressRun 1.4s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
 }
 
-/* Green transition shutter */
-.transition-shutter {
-  position: fixed;
-  inset: 0;
-  z-index: 10000;
-  background-color: var(--color-koffi-green);
-  transform: translateY(100%);
-  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.shutter-logo-text {
-  font-family: var(--font-logo);
-  font-size: 5rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1.1;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out;
-}
-
-.transition-shutter.active .shutter-logo-text {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.transition-shutter.active {
-  transform: translateY(0);
-}
-
-.transition-shutter.flip-up {
+.loader-container.flip-up {
   animation: windowFlipUp 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
+
 
 
 .loader-fade-out {
